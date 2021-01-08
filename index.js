@@ -64,7 +64,7 @@ ctx.stroke();
 
 
 
-
+/*
 let lastX,lastY,isDrawingHohohohoho;
 
 canvas.addEventListener('pointerdown',(event)=>{
@@ -88,7 +88,7 @@ canvas.addEventListener('pointermove',(event)=>{
     ctx.stroke();
     }
 })
-
+/**/
 
 
 //===================================
@@ -121,6 +121,16 @@ let ball1x=50,ball1y=50;
 let ball2x=100,ball2y=100;
 let ball3x=150,ball3y=150;
 let ball4x=200,ball4y=200;
+let ball5x=300,ball5y=300;
+
+
+
+
+canvas.addEventListener('pointerup',(event)=>{
+    ball0x=event.clientX;
+    ball0y=event.clientY;
+});
+
 
 const drawBall = ()=>{
 
@@ -128,6 +138,8 @@ const drawBall = ()=>{
     lastTime = performance.now();
   
     ctx.clearRect(0,0,500,500);
+
+    
     ctx.beginPath();
     ctx.strokeStyle = "blue"
     for(let i= -100;i<100;i+=0.01){
@@ -138,8 +150,8 @@ const drawBall = ()=>{
     }
     ctx.stroke();
 
-    ball0x=ball0x+30*duration;
-    ball0y=ball0y+7*duration;
+    ball0x=ball0x-10*duration;
+    ball0y=ball0y-7*duration;
 
 
     ctx.beginPath();
@@ -152,8 +164,8 @@ const drawBall = ()=>{
     }
     ctx.stroke();
 
-    ball1x=ball1x+30*duration;
-    ball1y=ball1y+7*duration;
+    ball1x=ball1x+15*duration;
+    ball1y=ball1y-17*duration;
 
     ctx.beginPath();
     ctx.strokeStyle = "green"
@@ -165,7 +177,7 @@ const drawBall = ()=>{
     }
     ctx.stroke();
 
-    ball2x=ball2x+30*duration;
+    ball2x=ball2x-30*duration;
     ball2y=ball2y+7*duration;
 
     ctx.beginPath();
@@ -179,7 +191,7 @@ const drawBall = ()=>{
     ctx.stroke();
 
     ball3x=ball3x+30*duration;
-    ball3y=ball3y+7*duration;
+    ball3y=ball3y+0*duration;
 
     ctx.beginPath();
     ctx.strokeStyle = "purple"
@@ -191,8 +203,8 @@ const drawBall = ()=>{
     }
     ctx.stroke();
 
-    ball4x=ball4x+30*duration;
-    ball4y=ball4y+7*duration;
+    ball4x=ball4x+18*duration;
+    ball4y=ball4y+36*duration;
 
     //if(ballX<100){
         //drawBall();
@@ -201,4 +213,6 @@ const drawBall = ()=>{
     //}
 };
 drawBall();
+
+
 
