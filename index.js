@@ -118,6 +118,8 @@ alert(4);
 let lastTime=performance.now();
 let ball0x=0,ball0y=0;
 let ball1x=50,ball1y=50;
+let ball2x=100,ball2y=100;
+
 
 const drawBall = ()=>{
 
@@ -135,7 +137,7 @@ const drawBall = ()=>{
     ctx.stroke();
 
     ball0x=ball0x+30*duration;
-    ball1y=ball1y+7*duration;
+    ball0y=ball0y+7*duration;
 
 
     ctx.beginPath();
@@ -148,6 +150,19 @@ const drawBall = ()=>{
     ctx.stroke();
 
     ball1x=ball1x+30*duration;
+    ball1y=ball1y+7*duration;
+
+    ctx.beginPath();
+    for(let i= -100;i<100;i+=0.01){
+        ctx.lineTo(
+            Math.cos(i)*20+ball2x,
+            Math.sin(i)*20+ball2y,
+        );
+    }
+    ctx.stroke();
+
+    ball2x=ball2x+30*duration;
+    ball2y=ball2y+7*duration;
 
 
 
