@@ -132,8 +132,8 @@ const drawBall = ()=>{
     ctx.strokeStyle = "blue"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
-            Math.cos(i)*20+ball0x,
-            Math.sin(i)*20+ball0y,
+            Math.cos(i)*30+ball0x,
+            Math.sin(i)*30+ball0y,
         );
     }
     ctx.stroke();
@@ -146,8 +146,8 @@ const drawBall = ()=>{
     ctx.strokeStyle = "red"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
-            Math.sin(i)*20+ball1x,
-            Math.cos(i)*20+ball1y,
+            Math.sin(i)*30+ball1x,
+            Math.cos(i)*30+ball1y,
         );
     }
     ctx.stroke();
@@ -159,8 +159,8 @@ const drawBall = ()=>{
     ctx.strokeStyle = "green"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
-            Math.cos(i)*20+ball2x,
-            Math.sin(i)*20+ball2y,
+            Math.cos(i)*30+ball2x,
+            Math.sin(i)*30+ball2y,
         );
     }
     ctx.stroke();
@@ -172,8 +172,8 @@ const drawBall = ()=>{
     ctx.strokeStyle = "orange"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
-            Math.cos(i)*20+ball3x,
-            Math.sin(i)*20+ball3y,
+            Math.cos(i)*30+ball3x,
+            Math.sin(i)*30+ball3y,
         );
     }
     ctx.stroke();
@@ -185,15 +185,15 @@ const drawBall = ()=>{
     ctx.strokeStyle = "purple"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
-            Math.cos(i)*20+ball4x,
-            Math.sin(i)*20+ball4y,
+            Math.cos(i)*30+ball4x,
+            Math.sin(i)*30+ball4y,
         );
     }
     ctx.stroke();
 
     ball4x=ball4x+30*duration;
     ball4y=ball4y+7*duration;
-    
+
     //if(ballX<100){
         //drawBall();
         //setTimeout(drawBall,Math.random()*100);
