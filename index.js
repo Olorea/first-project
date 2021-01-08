@@ -119,7 +119,8 @@ let lastTime=performance.now();
 let ball0x=0,ball0y=0;
 let ball1x=50,ball1y=50;
 let ball2x=100,ball2y=100;
-
+let ball3x=150,ball3y=150;
+let ball4x=200,ball4y=200;
 
 const drawBall = ()=>{
 
@@ -128,6 +129,7 @@ const drawBall = ()=>{
   
     ctx.clearRect(0,0,500,500);
     ctx.beginPath();
+    ctx.strokeStyle = "blue"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
             Math.cos(i)*20+ball0x,
@@ -141,6 +143,7 @@ const drawBall = ()=>{
 
 
     ctx.beginPath();
+    ctx.strokeStyle = "red"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
             Math.sin(i)*20+ball1x,
@@ -153,6 +156,7 @@ const drawBall = ()=>{
     ball1y=ball1y+7*duration;
 
     ctx.beginPath();
+    ctx.strokeStyle = "green"
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
             Math.cos(i)*20+ball2x,
@@ -164,8 +168,32 @@ const drawBall = ()=>{
     ball2x=ball2x+30*duration;
     ball2y=ball2y+7*duration;
 
+    ctx.beginPath();
+    ctx.strokeStyle = "orange"
+    for(let i= -100;i<100;i+=0.01){
+        ctx.lineTo(
+            Math.cos(i)*20+ball3x,
+            Math.sin(i)*20+ball3y,
+        );
+    }
+    ctx.stroke();
 
+    ball3x=ball3x+30*duration;
+    ball3y=ball3y+7*duration;
 
+    ctx.beginPath();
+    ctx.strokeStyle = "purple"
+    for(let i= -100;i<100;i+=0.01){
+        ctx.lineTo(
+            Math.cos(i)*20+ball4x,
+            Math.sin(i)*20+ball4y,
+        );
+    }
+    ctx.stroke();
+
+    ball4x=ball4x+30*duration;
+    ball4y=ball4y+7*duration;
+    
     //if(ballX<100){
         //drawBall();
         //setTimeout(drawBall,Math.random()*100);
