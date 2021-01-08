@@ -1,7 +1,6 @@
 "use strict";
 
 const canvas = document.querySelector('canvas')
-console.log(canvas)
 const ctx = canvas.getContext ('2d')
 
 /*
@@ -110,44 +109,53 @@ alert(4);
 */
 
 //===================================
+// camelCase
+// BigCamelCase
+// underscore_case
+// UPPER_CASE
 
-let ballX=0,ballY=0, lastTime=performance.now();
 
+let lastTime=performance.now();
+let ball0x=0,ball0y=0;
+let ball1x=50,ball1y=50;
 
 const drawBall = ()=>{
 
     const duration = (performance.now() - lastTime)/1000;
     lastTime = performance.now();
-
-    //console.log(duration);
-
   
     ctx.clearRect(0,0,500,500);
     ctx.beginPath();
     for(let i= -100;i<100;i+=0.01){
         ctx.lineTo(
-            Math.sin(i)*20+ballX,
-            Math.cos(i)*20+ballY,
+            Math.cos(i)*20+ball0x,
+            Math.sin(i)*20+ball0y,
         );
     }
     ctx.stroke();
 
-    ballX=ballX+30*duration;
-    //ballY=ballY+0.7;
+    ball0x=ball0x+30*duration;
+    ball1y=ball1y+7*duration;
+
+
+    ctx.beginPath();
+    for(let i= -100;i<100;i+=0.01){
+        ctx.lineTo(
+            Math.sin(i)*20+ball1x,
+            Math.cos(i)*20+ball1y,
+        );
+    }
+    ctx.stroke();
+
+    ball1x=ball1x+30*duration;
+
+
 
     //if(ballX<100){
         //drawBall();
         //setTimeout(drawBall,Math.random()*100);
         requestAnimationFrame(drawBall);
     //}
-
 };
-
-
-
 drawBall();
-
-
-
-
 
