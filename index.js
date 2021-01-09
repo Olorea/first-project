@@ -36,7 +36,7 @@ ctx.beginPath();
 
 ctx.moveTo(250,250);
 
-for(let i= -100;i<100;i+=0.01){
+for(let i= -Math.PI;i<=Math.PI;i+=0.03){
     ctx.lineTo(
         Math.sin(i)*10+250,
         Math.cos(i)*10+250,
@@ -142,7 +142,7 @@ const drawBall = ()=>{
     
     ctx.beginPath();
     ctx.strokeStyle = "blue"
-    for(let i= -100;i<100;i+=0.01){
+    for(let i= -Math.PI;i<=Math.PI;i+=0.03){
         ctx.lineTo(
             Math.cos(i)*30+ball0x,
             Math.sin(i)*30+ball0y,
@@ -156,7 +156,7 @@ const drawBall = ()=>{
 
     ctx.beginPath();
     ctx.strokeStyle = "red"
-    for(let i= -100;i<100;i+=0.01){
+    for(let i= -Math.PI;i<=Math.PI;i+=0.03){
         ctx.lineTo(
             Math.sin(i)*30+ball1x,
             Math.cos(i)*30+ball1y,
@@ -169,7 +169,7 @@ const drawBall = ()=>{
 
     ctx.beginPath();
     ctx.strokeStyle = "green"
-    for(let i= -100;i<100;i+=0.01){
+    for(let i= -Math.PI;i<=Math.PI;i+=0.03){
         ctx.lineTo(
             Math.cos(i)*30+ball2x,
             Math.sin(i)*30+ball2y,
@@ -182,7 +182,7 @@ const drawBall = ()=>{
 
     ctx.beginPath();
     ctx.strokeStyle = "orange"
-    for(let i= -100;i<100;i+=0.01){
+    for(let i= -Math.PI;i<=Math.PI;i+=0.03){
         ctx.lineTo(
             Math.cos(i)*30+ball3x,
             Math.sin(i)*30+ball3y,
