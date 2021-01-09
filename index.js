@@ -195,7 +195,7 @@ const drawBall = ()=>{
 
     ctx.beginPath();
     ctx.strokeStyle = "purple"
-    for(let i= -100;i<100;i+=0.01){
+    for(let i= -Math.PI;i<=Math.PI;i+=Math.PI*2/5){
         ctx.lineTo(
             Math.cos(i)*30+ball4x,
             Math.sin(i)*30+ball4y,
