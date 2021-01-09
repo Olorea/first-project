@@ -116,19 +116,20 @@ alert(4);
 
 
 let lastTime=performance.now();
-let ball0x=0,ball0y=0;
+let ball0 = {x:0, y:0};
 let ball1x=50,ball1y=50;
 let ball2x=100,ball2y=100;
 let ball3x=150,ball3y=150;
 let ball4x=200,ball4y=200;
 let ball5x=300,ball5y=300;
 
+let balls = [{x:250, y:250,color:'red'},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250},{x:250, y:250, color: 'blue'}];
 
 
 
 canvas.addEventListener('pointerup',(event)=>{
-    ball0x=event.clientX;
-    ball0y=event.clientY;
+    ball0.x=event.clientX;
+    ball0.y=event.clientY;
 });
 
 
@@ -144,14 +145,14 @@ const drawBall = ()=>{
     ctx.strokeStyle = "blue"
     for(let i= -Math.PI;i<=Math.PI;i+=0.03){
         ctx.lineTo(
-            Math.cos(i)*30+ball0x,
-            Math.sin(i)*30+ball0y,
+            Math.cos(i)*30+ball0.x,
+            Math.sin(i)*30+ball0.y,
         );
     }
     ctx.stroke();
 
-    ball0x=ball0x-10*duration;
-    ball0y=ball0y-7*duration;
+    ball0.x=ball0.x-10*duration;
+    ball0.y=ball0.y-7*duration;
 
 
     ctx.beginPath();
@@ -205,6 +206,22 @@ const drawBall = ()=>{
 
     ball4x=ball4x+18*duration;
     ball4y=ball4y+36*duration;
+
+
+    for(let ball of balls){
+        ctx.beginPath();
+        ctx.strokeStyle = ball.color||"white"
+        for(let i= -Math.PI;i<=Math.PI;i+=Math.PI*2/8){
+            ctx.lineTo(
+                Math.cos(i)*30+ball.x,
+                Math.sin(i)*30+ball.y,
+            );
+        }
+        ctx.stroke();
+    
+        ball.x=ball.x+(Math.random()-0.5)*100*duration;
+        ball.y=ball.y+(Math.random()-0.5)*100*duration;
+    }
 
     //if(ballX<100){
         //drawBall();
