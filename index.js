@@ -63,7 +63,7 @@ for(var axis of ['x','y']){
     for(let i=0;i<=10;i+=Math.PI*2*5){
         ctx.beginPath();
         ctx.lineWidth = "1";
-        ctx.strokeStyle = "#ccc";  // Green path/ osa y
+        ctx.strokeStyle = "black";  // Green path/ osa y
         if(axis==='x'){
             ctx.moveTo(i, 500);
             ctx.lineTo(i, 0);
