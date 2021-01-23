@@ -45,7 +45,7 @@ ctx.stroke();
 for(var axis of ['x','y']){
     for(let i=0;i<=500;i+=Math.PI*2*5){
         ctx.beginPath();
-        ctx.lineWidth = "1";
+        ctx.lineWidth = 1;
         ctx.strokeStyle = "#ccc";  // Green path/ osa y
         if(axis==='x'){
             ctx.moveTo(i, 500);
@@ -59,18 +59,21 @@ for(var axis of ['x','y']){
     }
 }
 //====================[ points on Axis (TODO: maybe better name) ]===
+var POINTS_ON_AXIS_SIZE = 5;
 for(var axis of ['x','y']){
-    for(let i=0;i<=10;i+=Math.PI*2*5){
+    for(let i=0;i<=500;i+=10){
         ctx.beginPath();
-        ctx.lineWidth = "1";
+        ctx.lineWidth = 2;
         ctx.strokeStyle = "black";  // Green path/ osa y
+        var a = (250-POINTS_ON_AXIS_SIZE/2);
+        var b = (250+POINTS_ON_AXIS_SIZE/2)
         if(axis==='x'){
-            ctx.moveTo(i, 500);
-            ctx.lineTo(i, 0);
+            ctx.moveTo(i, a);
+            ctx.lineTo(i, b);
         }else
         if(axis==='y'){
-            ctx.moveTo(500,i);
-            ctx.lineTo(0,i);
+            ctx.moveTo(a,i);
+            ctx.lineTo(b,i);
         }
         ctx.stroke();  // Draw it
     }
@@ -78,17 +81,17 @@ for(var axis of ['x','y']){
 
 //====================[ Axis Y ]===
 ctx.beginPath();
-ctx.lineWidth = "2";
+ctx.lineWidth = 2;
 ctx.font = "30px Arial";
 ctx.fillText("y", 260, 70); 
 ctx.strokeStyle = "green";  // Green path/ osa y
 ctx.moveTo(250, 500);
-ctx.lineTo(250, 50);
+ctx.lineTo(250, 0);
 ctx.stroke();  // Draw it
 
 //====================[ Axis X ]===
 ctx.beginPath();
-ctx.lineWidth = "2";
+ctx.lineWidth = 2;
 ctx.fillText("x", 480, 310);
 ctx.strokeStyle = "purple";  // Purple path/osa x
 ctx.moveTo(0, 250);
