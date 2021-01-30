@@ -6,20 +6,20 @@ class Star{
     constructor(x,y,rotation,size,color){
         this.x=x;
         this.y=y;
-        this.rotation=rotation;
-        this.size=size;
-        this.color=color;
+        this.rotation=rotation||0;
+        this.size=size||30;
+        this.color=color||"white";
         this.edges=2.5;
     }
 
     render(){
         ctx.beginPath();
-        ctx.strokeStyle = this.color||"white";
-        const radians = (this.rotation||0)/180*Math.PI;
-        for(let i= -Math.PI;i<=Math.PI*4;i+=Math.PI*2/(this.edges||16)){
+        ctx.strokeStyle = this.color;
+        const radians = (this.rotation)/180*Math.PI;
+        for(let i= -Math.PI;i<=Math.PI*4;i+=Math.PI*2/this.edges){
             ctx.lineTo(
-                Math.cos(i+radians)*(this.width||this.size||30)+this.x,
-                Math.sin(i+radians)*(this.height||this.size||30)+this.y,
+                Math.cos(i+radians)*this.size+this.x,
+                Math.sin(i+radians)*this.size+this.y,
             );
         }
         ctx.stroke();
@@ -30,7 +30,7 @@ class Star{
 //======================================================Data
 
 let balls = [];
-for(let i=0;i<100;i=i+1){
+for(let i=0;i<200;i=i+1){
     const star = new Star(
         Math.random()*500,
         Math.random()*500,
@@ -58,8 +58,10 @@ const drawBall = ()=>{
     for(let ball of balls){
         
         ball.render();
-        ball.x=ball.x+(Math.random()-0.5)*100*duration;
-        ball.y=ball.y+(Math.random()-0.5)*100*duration;
+        ball.x=ball.x+(Math.random()-0.5)*30*duration;
+        ball.y=ball.y+(Math.random()-0.1)*100*duration;
+        if(ball.y>500)ball.y=0;
+        ball.rotation=ball.rotation+100*duration;
     }
 
     requestAnimationFrame(drawBall);
