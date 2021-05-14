@@ -1,5 +1,8 @@
 "use strict";
 
+
+//alert(`Hello world`)
+
 //======================================================Definition
 
 class Star{
@@ -12,7 +15,7 @@ class Star{
         this.edges=2.5;
     }
 
-    render(){
+    render(ctx){
         ctx.beginPath();
         ctx.strokeStyle = this.color;
         const radians = (this.rotation)/180*Math.PI;
@@ -26,7 +29,7 @@ class Star{
     }
 }
 
-
+/*
 //======================================================Data
 
 let balls = [];
@@ -68,6 +71,39 @@ const drawBall = ()=>{
 
 };
 drawBall();
+*/
+/*
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext ('2d')
+
+const star1 = new Star(100,100,0,10,'red');
 
 
 
+// Render loop
+setInterval(()=>{
+    ctx.clearRect(0,0,500,500);
+    star1.render(ctx);
+},10);
+
+
+
+// Update loop
+setInterval(()=>{
+    star1.x = star1.x+1;
+},100);
+
+
+canvas.addEventListener('pointermove',(event)=>{
+    star1.x = event.clientY;
+    star1.y = event.clientX;
+})
+*/
+
+
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext ('2d')
+
+for (var x = 0.5; x < 500; x += 10) {
+    context.moveTo(x, 0);
+    context.lineTo(x, 375);
