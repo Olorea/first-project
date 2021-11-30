@@ -104,6 +104,10 @@ canvas.addEventListener('pointermove',(event)=>{
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext ('2d')
 
-for (var x = 0.5; x < 500; x += 10) {
-    context.moveTo(x, 0);
-    context.lineTo(x, 375);
+
+ 
+ctx.moveTo(10, 0);
+ctx.lineTo(10, 375);
+
+ctx.strokeStyle = "#000";
+ctx.stroke();
