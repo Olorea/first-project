@@ -2,3 +2,7 @@ body{
     background-color: #fff;
     font-size: 30px;
 }
+
+canvas{
+    border: 2px solid blue;
+}
