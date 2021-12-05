@@ -106,8 +106,16 @@ const ctx = canvas.getContext ('2d')
 
 
  
-ctx.moveTo(10, 0);
+
+/*ctx.moveTo(10, 0);
 ctx.lineTo(10, 375);
 
 ctx.strokeStyle = "#000";
-ctx.stroke();
+ctx.stroke();*/
+
+//canvas width="320" height="200" id="platno"></canvas>
+
+//let platno = document.getElementById("platno");
+//let kontext = platno.getContext("2d");
+
+
