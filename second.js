@@ -18,7 +18,7 @@ drawRectangle(ctx1,10,10,"red");
 drawRectangle(ctx1,70,90,"green");
 drawRectangle(ctx1,300,309,"blue");
 
-drawRectangle(ctx2);
+//drawRectangle(ctx2);
 
 function drawArc(ctx){
     ctx.beginPath();
@@ -27,7 +27,7 @@ function drawArc(ctx){
 }
 
 
-drawArc(ctx2);
+//drawArc(ctx2);
 
 /*
 for(let i=0;i<200;i=i+1){
@@ -50,5 +50,8 @@ ctx.stroke();
 drawRandomWalk(ctx1,50,50);
 
 for(let i=0;i<100;i=i+1){
-    drawRandomWalk(ctx2,Math.random()*500,Math.random()*500);
+    //drawRandomWalk(ctx2,Math.random()*500,Math.random()*500);
 }
+
+drawTriangle(ctx2,0,0);
+drawTriangle(ctx2,250,250);
