@@ -1,35 +1,33 @@
 // alert('hello')
 
+const canvas1 = document.getElementById('platno1')
+const ctx1 = canvas1.getContext ('2d')
 
-const canvas = document.querySelector('canvas')
-const ctx = canvas.getContext ('2d')
+const canvas2 = document.getElementById('platno2')
+const ctx2 = canvas2.getContext ('2d')
 
- function drawRectangle(){
+ function drawRectangle(ctx,x=250,y=250,color="#906090"){
 
-    ctx.moveTo(10, 0);
-    ctx.lineTo(10, 375);
-    ctx.lineTo(150, 375);
-
-
-    ctx.strokeStyle = "#000";
-    ctx.stroke();
+    ctx.fillStyle  = color;
+    ctx.fillRect(x,y, 100, 100);
+    //ctx.strokeRect(200, 50, 100, 100);
 
 }
 
-drawRectangle();
+drawRectangle(ctx1,10,10,"red");
+drawRectangle(ctx1,70,90,"green");
+drawRectangle(ctx1,300,309,"blue");
 
-function drawArc(){
+drawRectangle(ctx2);
 
-    ctx.fillRect(50, 50, 100, 100);
-    ctx.strokeRect(200, 50, 100, 100);
-
+function drawArc(ctx){
     ctx.beginPath();
     ctx.arc(100, 100, 80, 0, Math.PI * 2);
     ctx.fill();
-
 }
 
-drawArc();
+
+drawArc(ctx2);
 
 /*
 for(let i=0;i<200;i=i+1){
@@ -47,25 +45,10 @@ ctx.stroke();
 */
 //--------
 
-function drawRandomWalk(){
 
-    let x = Math.random()*500;
-    let y = Math.random()*500;
 
-    ctx.moveTo(x,y);
+drawRandomWalk(ctx1,50,50);
 
-    for(let i=0;i<100;i=i+1){
-    
-        x+=(Math.random()-0.5)*10;
-        y+=(Math.random()-0.5)*10;
-
-        ctx.lineTo(x,y);
-    
-    }
-    ctx.stroke();
-    //ctx.fill();
-}
-
-for(let i=0;i<10;i=i+1){
-    drawRandomWalk();
+for(let i=0;i<100;i=i+1){
+    drawRandomWalk(ctx2,Math.random()*500,Math.random()*500);
 }
