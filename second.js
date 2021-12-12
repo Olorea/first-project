@@ -55,3 +55,7 @@ for(let i=0;i<100;i=i+1){
 
 drawTriangle(ctx2,0,0);
 drawTriangle(ctx2,250,250);
+
+
+
+
